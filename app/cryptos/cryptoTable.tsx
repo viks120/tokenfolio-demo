@@ -95,7 +95,7 @@ const CryptoTable =  () => {
             <tbody>
             {filteredCryptos.map((c: Crypto) => 
                 <tr key={c.id} onClick={() => clickHandler(c)}>
-                    <td className="p-4 border-b border-blue-gray-50">
+                    <td className="p-4 border-b border-blue-gray-50 min-w-8 max-w-25">
                     <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                         {c.name} 
                         
