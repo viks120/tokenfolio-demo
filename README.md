@@ -1,3 +1,42 @@
+## Notes
+
+### Hours spent:
+
+- Spent approximately 5-6 hours learning and understanding the core concepts of Next.js
+- Dedicated around 12-14 hours to implement the project functionality
+- Utilized Tailwind CSS, with some code adapted from various free template sources.
+
+### Development note
+
+- The API call was replaced with a local API due to the rate limit imposed by the free account white testing, which resulted in the IP address being blocked.
+
+````
+const options = {
+                method: 'GET',
+                headers: {accept: 'application/json', 'x-cg-pro-api-key': 'CG'}
+            };
+
+const api_url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1';
+
+const res = await fetch(api_url,options);
+const data: Crypto[] = await res.json();
+```
+
+- Testing has not been included in this project due to time constraints. I would have used the JEST library to test the rendering of the expected text and added multiple test cases.
+
+## Idea to implment last viewed clicks
+
+- Use localStorage to store the last viewed data for quick and simple client-side storage.
+- Leverage the file system to persist data on the server
+- Use database to store and manage last viewed data, especially for multi-user environments
+
+## Future implementation
+
+- Implement user sessions to track and log user activity, ensuring a personalized experience.
+- Add pagination or infinite scrolling to improve performance when handling large datasets
+- Enhance error handling with user-friendly messages and retry mechanisms for API calls
+- Use lazy loading for components and images to improve initial load times.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -12,7 +51,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
