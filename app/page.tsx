@@ -6,12 +6,7 @@ import CryptoDetails from "./cryptos/cryptoDetails";
 export default function Home() {
   return (
     <div>
-      
-      
         <CryptoTable />
-        
-   
-      
     </div>
   );
 }

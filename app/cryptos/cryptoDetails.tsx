@@ -9,7 +9,7 @@ const CryptoDetails = ({crypto}:any) => {
           {crypto.name} ({crypto.symbol})
           </h6>
           <p className="text-slate-600 leading-normal font-light">
-          Current Price: {crypto.current_price}
+          Current Price: {crypto.curr} {crypto.current_price}
           </p>
       </div>
     </div>
