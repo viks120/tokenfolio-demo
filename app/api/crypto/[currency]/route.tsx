@@ -4,11 +4,14 @@ import crypto_inr from '../cryp_obj_inr.json'
 import crypto_eur from '../cryp_obj_eur.json'
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest, context: { params: { currency: string }}) {
-  
-  const params = await context.params;
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ currency: string }> }
+) {
+  const { currency } = await params;
+
+  const curr = currency.toLowerCase();
   let cryptos;
-  const curr = params.currency.toLowerCase();
 
     if(curr == 'usd') {
       cryptos = crypto_usd;
@@ -19,11 +22,8 @@ export async function GET(request: NextRequest, context: { params: { currency: s
     } else if(curr == 'inr') {
       cryptos = crypto_inr;
     }
-    
-    return new NextResponse(JSON.stringify(cryptos), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
+
+    return NextResponse.json(cryptos, {status:200})
   }
 
 
