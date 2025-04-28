@@ -1,24 +1,3 @@
-## Notes
-
-### Hours spent:
-
-- Spent approximately 5-6 hours learning and understanding the core concepts of Next.js
-- Dedicated around 12-14 hours to implement the project functionality
-- Utilized Tailwind CSS, with some code adapted from various free template sources.
-
-## Idea to implment last viewed clicks
-
-- Use localStorage to store the last viewed data for quick and simple client-side storage.
-- Leverage the file system to persist data on the server
-- Use database to store and manage last viewed data, especially for multi-user environments
-
-## Future implementation
-
-- Implement user sessions to track and log user activity, ensuring a personalized experience.
-- Add pagination or infinite scrolling to improve performance when handling large datasets
-- Enhance error handling with user-friendly messages and retry mechanisms for API calls
-- Use lazy loading for components and images to improve initial load times.
-
 ### Development note
 
 - The API call was replaced with a local API due to the rate limit imposed by the free account white testing, which resulted in the IP address being blocked.
